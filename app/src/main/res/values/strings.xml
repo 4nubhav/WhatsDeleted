@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">WhatsApp Notification Listener</string>
+    <string name="media_observer_service">Media Observer Service</string>
+
+    <!-- activity_main.xml -->
+    <string name="clear">Clear</string>
+    <string name="delete">Delete All</string>
+    <string name="media_observer">Media Observer</string>
+    <string name="notification_listener">Notification Listener</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Message log: %1$s</string>
+    <string name="img_dir_status_str">Images directory: %1$s</string>
+
+    <string name="clear_msg_log">Clear Message Log</string>
+    <string name="clear_msg_log_confirm">Are you sure you want to clear the message log?</string>
+    <string name="cleared">Cleared</string>
+    <string name="clear_failed">Failed to clear</string>
+
+    <string name="del_backup_img">Delete Backup Images</string>
+    <string name="del_backup_img_confirm">Are you sure you want to delete all the backup images?</string>
+    <string name="del_failed">Failed to delete</string>
+
+    <string name="started">Started</string>
+    <string name="stopped">Stopped</string>
+
+    <string name="create_backup_dir_failed">Failed to create backup directory</string>
+    <string name="create_msg_log_failed">Failed to create message log file</string>
+
+    <string name="create_backup_dir">Creating backup directory</string>
+    <string name="allow_storage_permission_msg">Messages and media cannot be saved without storage permission. Restart the app and allow.</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="unable_to_delete">Unable to delete: %1$s</string>
+</resources>
