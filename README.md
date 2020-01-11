@@ -30,6 +30,12 @@
 * Notification Access (to access new messages from notifications)
 * Storage
 
+## Download
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="70">](https://f-droid.org/packages/com.gmail.anubhavdas54.whatsdeleted/)
+
 ## Points to note
 
 * Messages received **directly in the chat window (and not in the notifications) won't be saved**.
