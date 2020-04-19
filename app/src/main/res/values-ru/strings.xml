@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">Отслеживание уведомлений WhatsApp</string>
+    <string name="media_observer_service">Сервис Отслеживания Медиа файлов</string>
+
+    <!-- activity_main.xml -->
+    <string name="clear">Очистить</string>
+    <string name="delete">Удалить Всё</string>
+    <string name="media_observer">Отслеживание медиа файлов</string>
+    <string name="notification_listener">Отслеживание уведомлений</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Записи журнала: %1$s</string>
+    <string name="img_dir_status_str">Директория изображений: %1$s</string>
+
+    <string name="clear_msg_log">Очистить Записи Журнала</string>
+    <string name="clear_msg_log_confirm">Вы уверены что хотите очистить записи журнала?</string>
+    <string name="cleared">Очищено</string>
+    <string name="clear_failed">Очистка не удалась</string>
+
+    <string name="del_backup_img">Удалить Резервную Копию Изображений</string>
+    <string name="del_backup_img_confirm">Вы уверены что хотите удалить все резервные копии изображений?</string>
+    <string name="del_failed">Не удалено</string>
+
+    <string name="started">Запущено</string>
+    <string name="stopped">Остановлено</string>
+
+    <string name="create_backup_dir_failed">Не удалось создать директорию резервной копии</string>
+    <string name="create_msg_log_failed">Не удалось создать файл записей журнала</string>
+
+    <string name="create_backup_dir">Создание директории резервной копии</string>
+    <string name="allow_storage_permission_msg">Сообщения и медиа файлы не могут быть сохранены без разрешения доступа к содержимому хранилища. Перезапустите приложение и дайте разрешение.</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Да</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="unable_to_delete">Не удалось удалить : %1$s</string>
+</resources>
