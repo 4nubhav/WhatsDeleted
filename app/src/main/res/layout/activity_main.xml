@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Colored"
             android:theme="@style/PrimaryButtonTheme"
-            android:text="@string/clear" />
+            android:text="@string/view" />
 
     </LinearLayout>
 

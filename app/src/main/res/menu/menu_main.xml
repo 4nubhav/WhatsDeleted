@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gmail.anubhavdas54.whatsdeleted.MainActivity">
+
+    <item
+        android:id="@+id/action_toggle_theme"
+        android:icon="@drawable/ic_invert_colors"
+        android:title="Light/Dark"
+        app:showAsAction="always"
+        tools:ignore="HardcodedText" />
+
+</menu>

@@ -6,7 +6,7 @@
     <string name="media_observer_service">Media Observer Service</string>
 
     <!-- activity_main.xml -->
-    <string name="clear">Clear</string>
+    <string name="view">View</string>
     <string name="delete">Delete All</string>
     <string name="media_observer">Media Observer</string>
     <string name="notification_listener">Notification Listener</string>
@@ -38,4 +38,8 @@
     <string name="cancel">Cancel</string>
 
     <string name="unable_to_delete">Unable to delete: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Refresh</string>
+    <string name="action_clear">Clear</string>
 </resources>

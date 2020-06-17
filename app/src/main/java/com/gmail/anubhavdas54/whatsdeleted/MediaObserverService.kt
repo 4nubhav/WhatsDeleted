@@ -23,7 +23,7 @@ class MediaObserverService : Service() {
             "mediaObserver")
             .setContentTitle("Media Observer")
             .setContentText("Watching for new images")
-            .setSmallIcon(R.drawable.ic_delete_black)
+            .setSmallIcon(R.drawable.ic_delete)
             .setContentIntent(pendingIntent)
             .setTicker("Watching for new images")
             .build()

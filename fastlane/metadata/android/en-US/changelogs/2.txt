@@ -1,0 +1,4 @@
+* Added message log viewer.
+* Message log moved to internal storage to prevent unauthorized access.
+* Dark theme.
+* Added Russian translation thanks to Andrei Guliaikin (guland2000).

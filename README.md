@@ -1,5 +1,6 @@
 # WhatsDeleted
 
+[![f-droid](https://img.shields.io/f-droid/v/com.gmail.anubhavdas54.whatsdeleted.svg)](https://f-droid.org/packages/com.gmail.anubhavdas54.whatsdeleted/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 <p align="center">
@@ -11,7 +12,7 @@
 
 ## How it works:
 
-* **Notification Listener** logs new messages to a text file. Open it with a text editor like [Markor](https://f-droid.org/en/packages/net.gsantner.markor/).
+* **Notification Listener** logs new messages.
 * **Media Observer** watches for new images.
 
 ## How to use:
@@ -22,8 +23,7 @@
 
 ## Backup Location
 
-* Messages -> Internal Storage/WhatsDeleted/msgLog.txt
-* Images -> Internal Storage/WhatsDeleted/WhatsDeleted Images/
+* Images -> External Storage/WhatsDeleted/WhatsDeleted Images/
 
 ## Permissions
 
@@ -40,4 +40,17 @@
 
 * Messages received **directly in the chat window (and not in the notifications) won't be saved**.
 * Images will be saved to the backup directory **only if they were downloaded**.
-* Clear the message log & image directory periodically **(after saving the important ones)** to save storage space.
+* Clear the message log & image directory periodically to save storage space.
+
+## Changelog
+
+### v0.2
+
+* Added message log viewer.
+* Message log moved to internal storage to prevent unauthorized access.
+* Dark theme.
+* Added Russian translation thanks to [Andrei Guliaikin](https://github.com/guland2000).
+
+### v0.1
+
+* Initial release

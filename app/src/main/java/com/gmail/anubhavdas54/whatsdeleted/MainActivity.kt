@@ -12,25 +12,24 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
-import java.io.PrintWriter
 import java.lang.Exception
 import android.content.DialogInterface
+import android.content.res.Configuration
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 
-private const val TAG = "MainActivity"
 private const val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0
 
 class MainActivity : AppCompatActivity() {
 
+    private val msgLogFileName = "msgLog.txt"
     private val whatsDeleted = File(Environment.getExternalStorageDirectory(),
         "WhatsDeleted${File.separator}WhatsDeleted Images")
-    private val msgLog = File(Environment.getExternalStorageDirectory(), 
-        "WhatsDeleted${File.separator}msgLog.txt")
 
     private val checkEmoji = String(Character.toChars(0x2714))
     private val crossEmoji = String(Character.toChars(0x274C))
@@ -50,32 +49,18 @@ class MainActivity : AppCompatActivity() {
 
         // TextView
         msgLogStatus.text = getString(R.string.msg_log_status_str,
-            if (msgLog.exists()) checkEmoji else crossEmoji)
+            if (File(this.filesDir, msgLogFileName).exists()) checkEmoji else crossEmoji)
         imgDirStatus.text = getString(R.string.img_dir_status_str,
-            if (msgLog.exists()) checkEmoji else crossEmoji)
+            if (whatsDeleted.exists()) checkEmoji else crossEmoji)
 
         // Button
         msgLogClrBtn.setOnClickListener {
-            showDialog(
-                this@MainActivity,
-                getString(R.string.clear_msg_log),
-                getString(R.string.clear_msg_log_confirm),
-                getString(R.string.yes),
-                getString(R.string.cancel),
-                DialogInterface.OnClickListener { _, _ ->
-                    try {
-                        PrintWriter(msgLog).use { out -> out.println("") }
-                        Toast.makeText(applicationContext, getString(R.string.cleared), Toast.LENGTH_SHORT).show()
-                    } catch (e: Exception) {
-                        Log.e(TAG, e.toString())
-                        Toast.makeText(applicationContext, getString(R.string.clear_failed), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            )
+            val intent = Intent(this, MsgLogViewerActivity::class.java)
+            startActivity(intent)
         }
 
         imgDirDelBtn.setOnClickListener{
-            showDialog(
+            AlertDialogHelper.showDialog(
                 this@MainActivity,
                 getString(R.string.del_backup_img),
                 getString(R.string.del_backup_img_confirm),
@@ -85,7 +70,6 @@ class MainActivity : AppCompatActivity() {
                     try {
                         deleteRecursive(whatsDeleted)
                     } catch (e: Exception) {
-                        Log.e(TAG, e.toString())
                         Toast.makeText(applicationContext, getString(R.string.del_failed), Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -134,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         notificationListenerSwitch.isClickable = false
         test.setOnClickListener {
             if (notificationListenerSwitch.isChecked) {
-                showDialog(
+                AlertDialogHelper.showDialog(
                     this@MainActivity,
                     "Turn off",
                     "Settings > Apps  & notifications > Special app access > " +
@@ -145,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             else {
-                showDialog(
+                AlertDialogHelper.showDialog(
                     this@MainActivity,
                     "Turn on",
                     "Settings > Apps & notifications > Special app access > " +
@@ -174,8 +158,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, getString(R.string.create_backup_dir_failed),
                     Toast.LENGTH_SHORT).show()
         }
-        if (!msgLog.exists()) {
-            if (!msgLog.createNewFile())
+        if (!File(this.filesDir, msgLogFileName).exists()) {
+            if (!File(this.filesDir, msgLogFileName).createNewFile())
                 Toast.makeText(applicationContext, getString(R.string.create_msg_log_failed),
                     Toast.LENGTH_SHORT).show()
         }
@@ -210,23 +194,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDialog(context: Context,
-                           title: String,
-                           msg: String,
-                           positiveBtnText: String, negativeBtnText: String?,
-                           positiveBtnClickListener: DialogInterface.OnClickListener): AlertDialog {
-        val builder = AlertDialog.Builder(context)
-            .setTitle(title)
-            .setMessage(msg)
-            .setCancelable(true)
-            .setPositiveButton(positiveBtnText, positiveBtnClickListener)
-        if (negativeBtnText != null)
-            builder.setNegativeButton(negativeBtnText) { dialog, _ -> dialog.cancel() }
-        val alert = builder.create()
-        alert.show()
-        return alert
-    }
-
     @Suppress("DEPRECATION")
     private fun <T> Context.isServiceRunning(service: Class<T>): Boolean {
         return (getSystemService(ACTIVITY_SERVICE) as ActivityManager)
@@ -242,6 +209,34 @@ class MainActivity : AppCompatActivity() {
                         getString(R.string.unable_to_delete, child.toString()),
                         Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+            R.id.action_toggle_theme -> {
+                val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+
+                when (currentNightMode) {
+                    Configuration.UI_MODE_NIGHT_NO -> {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                    Configuration.UI_MODE_NIGHT_YES -> {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+                }
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

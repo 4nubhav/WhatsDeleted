@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="PrimaryButtonTheme">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
