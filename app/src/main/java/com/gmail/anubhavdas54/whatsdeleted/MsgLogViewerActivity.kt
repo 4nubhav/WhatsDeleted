@@ -30,7 +30,7 @@ class MsgLogViewerActivity : AppCompatActivity() {
         }
     }
 
-    private fun readFile(fileName: File): List<String> = fileName.bufferedReader().readLines()
+    private fun readFile(fileName: File): List<String> = fileName.bufferedReader().readLines().asReversed()
 
     private fun refreshMsgLog() {
         msg_log_recycler_view.adapter = MsgLogAdapter(readFile(File(this.filesDir, msgLogFileName)))
