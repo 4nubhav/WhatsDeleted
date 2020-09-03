@@ -44,6 +44,10 @@
 
 ## Changelog
 
+### v0.3
+
+* Newest messages first in the message log viewer.
+
 ### v0.2
 
 * Added message log viewer.

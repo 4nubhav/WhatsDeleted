@@ -1,0 +1,1 @@
+* Newest messages first in the message log viewer.
