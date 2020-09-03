@@ -22,6 +22,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 private const val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0
 
@@ -43,8 +44,8 @@ class MainActivity : AppCompatActivity() {
         val imgDirStatus = findViewById<TextView>(R.id.img_dir_status)
         val msgLogClrBtn = findViewById<Button>(R.id.msg_log_clr_btn)
         val imgDirDelBtn = findViewById<Button>(R.id.img_dir_del_btn)
-        val medObsSwitch = findViewById<Switch>(R.id.med_obs_switch)
-        val notificationListenerSwitch = findViewById<Switch>(R.id.notification_listener_switch)
+        val medObsSwitch = findViewById<SwitchMaterial>(R.id.med_obs_switch)
+        val notificationListenerSwitch = findViewById<SwitchMaterial>(R.id.notification_listener_switch)
         val test = findViewById<LinearLayout>(R.id.test)
 
         // TextView
