@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">WhatsApp Monitor De Notificação</string>
+    <string name="media_observer_service">Serviço De Observação De Mídia</string>
+
+    <!-- activity_main.xml -->
+    <string name="view">Ver</string>
+    <string name="delete">Apagar Todos</string>
+    <string name="media_observer">Observação De Mídia</string>
+    <string name="notification_listener">Monitor De Notificação</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Registro de mensagem: %1$s</string>
+    <string name="img_dir_status_str">Diretório de imagens: %1$s</string>
+
+    <string name="clear_msg_log">Limpar registro de mensagem</string>
+    <string name="clear_msg_log_confirm">Tem certeza que deseja limpar o registro de mensagens?</string>
+    <string name="cleared">Apagado</string>
+    <string name="clear_failed">Falha ao apagar</string>
+
+    <string name="del_backup_img">Apagar cópia de segurança das imagens</string>
+    <string name="del_backup_img_confirm">Tem certeza que deseja apagar todas cópias de segurança das imagens?</string>
+    <string name="del_failed">Falha ao apagar</string>
+
+    <string name="started">Iniciado</string>
+    <string name="stopped">Parado</string>
+
+    <string name="create_backup_dir_failed">Falha ao criar diretório para cópia de segurança</string>
+    <string name="create_msg_log_failed">Falha ao criar arquivo de registro</string>
+
+    <string name="create_backup_dir">Criando diretório para cópia de segurança</string>
+    <string name="allow_storage_permission_msg">Mensagens e imagens não podem ser salvas sem a permissão de armazenamento. Reinicie o aplicativo e libere a permissão.</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Sim</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="unable_to_delete">Falha ao apagar: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Atualizar</string>
+    <string name="action_clear">Limpar</string>
+</resources>
