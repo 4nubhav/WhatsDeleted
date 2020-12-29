@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">Monitor de Notificaciones de WhatsApp</string>
+    <string name="media_observer_service">Servicio Monitor de Imágenes</string>
+
+    <!-- activity_main.xml -->
+    <string name="view">Ver</string>
+    <string name="delete">Borrar todo</string>
+    <string name="media_observer">Monitor de Imágenes</string>
+    <string name="notification_listener">Monitor De Notificaciones</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Registro de mensajes: %1$s</string>
+    <string name="img_dir_status_str">Directorio de imágenes: %1$s</string>
+
+    <string name="clear_msg_log">Limpiar registro de mensajes</string>
+    <string name="clear_msg_log_confirm">¿Está seguro de que desea limpiar el registro de mensajes?</string>
+    <string name="cleared">Limpiado</string>
+    <string name="clear_failed">Error al limpiar</string>
+
+    <string name="del_backup_img">Borrar imágenes de respaldo</string>
+    <string name="del_backup_img_confirm">¿Está seguro de que desea borrar las imágenes de respaldo?</string>
+    <string name="del_failed">Error al borrar</string>
+
+    <string name="started">Iniciado</string>
+    <string name="stopped">Detenido</string>
+
+    <string name="create_backup_dir_failed">Error al crear directorio de respaldos</string>
+    <string name="create_msg_log_failed">Error al crear archivo de registro</string>
+
+    <string name="create_backup_dir">Creando directorio de respaldos</string>
+    <string name="allow_storage_permission_msg">Los mensajes e imágenes no pueden ser guardados sin permiso de almacenamiento. Reinicie la aplicación y conceda el permiso.</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Sí</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="unable_to_delete">Imposible borrar: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Actualizar</string>
+    <string name="action_clear">Limpiar</string>
+</resources>
