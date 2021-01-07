@@ -44,6 +44,11 @@
 
 ## Changelog
 
+### v0.4
+
+* Added Brazilian Portuguese translation thanks to [Ivan A.](https://github.com/iraamaro).
+* Added Spanish translation thanks to [Elaborendum](https://github.com/Elaborendum).
+
 ### v0.3
 
 * Newest messages first in the message log viewer.

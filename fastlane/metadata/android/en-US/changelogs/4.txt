@@ -1,0 +1,2 @@
+* Added Brazilian Portuguese translation thanks to Ivan A. (iraamaro).
+* Added Spanish translation thanks to Elaborendum.
