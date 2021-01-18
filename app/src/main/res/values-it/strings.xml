@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">Registro delle notifiche di Whatsapp</string>
+    <string name="media_observer_service">Registro dei media di Whatsapp</string>
+
+    <!-- activity_main.xml -->
+    <string name="view">Visualizza</string>
+    <string name="delete">Elimina tutti i media</string>
+    <string name="media_observer">Salva i media</string>
+    <string name="notification_listener">Salva i messaggi</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Registro dei messaggi: %1$s</string>
+    <string name="img_dir_status_str">Cartella dei media: %1$s</string>
+
+    <string name="clear_msg_log">Elimina i messaggi salvati</string>
+    <string name="clear_msg_log_confirm">Sei sicuro di voler eliminare i messaggi salvati?</string>
+    <string name="cleared">Registro eliminato</string>
+    <string name="clear_failed">Impossibile eliminare il registro dei messaggi</string>
+
+    <string name="del_backup_img">Elimina le immagini salvate</string>
+    <string name="del_backup_img_confirm">Sei sicuro di voler eliminare le immagini salvate?</string>
+    <string name="del_failed">Errore durante l\'eliminazione</string>
+
+    <string name="started">Servizio avviato</string>
+    <string name="stopped">Servizio interrotto</string>
+
+    <string name="create_backup_dir_failed">Errore durante la creazione della cartella di backup</string>
+    <string name="create_msg_log_failed">Errore durante la creazione del registro dei messaggi</string>
+
+    <string name="create_backup_dir">Creazione cartella di backup</string>
+    <string name="allow_storage_permission_msg">I messaggi e i media non possono essere salvati senza l\'accesso alla memoria. Riavvia l\'app e consenti l\'accesso.</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Si</string>
+    <string name="cancel">Annulla</string>
+
+    <string name="unable_to_delete">Impossibile eliminare: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Aggiorna</string>
+    <string name="action_clear">Elimina</string>
+</resources>
