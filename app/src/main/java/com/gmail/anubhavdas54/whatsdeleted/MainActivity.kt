@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         // Widgets
         val msgLogStatus = findViewById<TextView>(R.id.msg_log_status)
         val imgDirStatus = findViewById<TextView>(R.id.img_dir_status)
-        val msgLogClrBtn = findViewById<Button>(R.id.msg_log_clr_btn)
+        val viewMsgLogBtn = findViewById<Button>(R.id.view_msg_log_btn)
         val imgDirDelBtn = findViewById<Button>(R.id.img_dir_del_btn)
         val medObsSwitch = findViewById<SwitchMaterial>(R.id.med_obs_switch)
         val notificationListenerSwitch = findViewById<SwitchMaterial>(R.id.notification_listener_switch)
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             if (whatsDeleted.exists()) checkEmoji else crossEmoji)
 
         // Button
-        msgLogClrBtn.setOnClickListener {
+        viewMsgLogBtn.setOnClickListener {
             val intent = Intent(this, MsgLogViewerActivity::class.java)
             startActivity(intent)
         }
