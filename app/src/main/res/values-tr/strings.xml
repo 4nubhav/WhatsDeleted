@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">WhatsApp Bildirim Dinleyici</string>
+    <string name="media_observer_service">Medya Gözlemcisi Hizmeti</string>
+
+    <!-- activity_main.xml -->
+    <string name="view">Görünüm</string>
+    <string name="delete">Tümünü Sil</string>
+    <string name="media_observer">Medya Gözlemcisi</string>
+    <string name="notification_listener">Bildirim Dinleyici</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">İleti günlüğü: %1$s</string>
+    <string name="img_dir_status_str">Resimler dizini: %1$s</string>
+
+    <string name="clear_msg_log">İleti Günlüğünü Sil</string>
+    <string name="clear_msg_log_confirm">İleti günlüğünü silmek istediğine emin misin?</string>
+    <string name="cleared">Silindi</string>
+    <string name="clear_failed">Silinemedi</string>
+
+    <string name="del_backup_img">Yedek Resimleri Sil</string>
+    <string name="del_backup_img_confirm">Yedek resimlerin tümünü silmek istediğine emin misin?</string>
+    <string name="del_failed">Silinemedi</string>
+
+    <string name="started">Başlatıldı</string>
+    <string name="stopped">Durduruldu</string>
+
+    <string name="create_backup_dir_failed">Yedek dizin yaratılamadı</string>
+    <string name="create_msg_log_failed">İleti günlüğü dosyası yaratılamadı</string>
+
+    <string name="create_backup_dir">Yedek dizin yaratılıyor</string>
+    <string name="allow_storage_permission_msg">İletiler ve medya depolama izni olmadan kaydedilemez. Uygulamayı yeniden başlat ve izin ver.</string>
+
+    <string name="ok">Tamam</string>
+    <string name="yes">Evet</string>
+    <string name="cancel">İptal</string>
+
+    <string name="unable_to_delete">Silinemedi: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Yenile</string>
+    <string name="action_clear">Clear</string>
+</resources>
