@@ -10,8 +10,8 @@ android {
         applicationId 'com.gmail.anubhavdas54.whatsdeleted'
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 4
-        versionName "0.4"
+        versionCode 5
+        versionName "0.4.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

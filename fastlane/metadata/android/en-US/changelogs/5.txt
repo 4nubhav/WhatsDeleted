@@ -1,0 +1,3 @@
+* Added support for Signal Private Messenger.
+* Added Italian translation thanks to Rocket Simo.
+* Added Turkish translation thanks to anilmavis.

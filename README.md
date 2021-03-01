@@ -44,6 +44,12 @@
 
 ## Changelog
 
+### v0.4.1
+
+* Added support for [Signal Private Messenger](https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms)
+* Added Italian translation thanks to Rocket Simo.
+* Added Turkish translation thanks to [anilmavis](https://github.com/anilmavis).
+
 ### v0.4
 
 * Added Brazilian Portuguese translation thanks to [Ivan A.](https://github.com/iraamaro).
