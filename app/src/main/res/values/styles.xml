@@ -8,8 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="PrimaryButtonTheme">
+    <style name="WhatsAppButtonTheme">
         <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="SignalButtonTheme">
+        <item name="colorAccent">@color/signalBlue</item>
     </style>
 
 </resources>

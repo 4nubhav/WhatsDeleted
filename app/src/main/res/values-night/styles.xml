@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="PrimaryButtonTheme">
+    <style name="WhatsAppButtonTheme">
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 

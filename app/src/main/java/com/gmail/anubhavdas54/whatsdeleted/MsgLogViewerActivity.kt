@@ -1,6 +1,5 @@
 package com.gmail.anubhavdas54.whatsdeleted
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -14,11 +13,14 @@ import java.lang.Exception
 
 class MsgLogViewerActivity : AppCompatActivity() {
 
-    private val msgLogFileName = "msgLog.txt"
+    private var msgLogFileName = String()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_msg_log_viewer)
+
+        msgLogFileName =
+            if (intent.getStringExtra("app") == "whatsapp") "msgLog.txt" else "signalMsgLog.txt"
 
         msg_log_recycler_view.adapter = MsgLogAdapter(readFile(File(this.filesDir, msgLogFileName)))
         msg_log_recycler_view.layoutManager = LinearLayoutManager(this)
@@ -57,17 +59,29 @@ class MsgLogViewerActivity : AppCompatActivity() {
                     getString(R.string.clear_msg_log),
                     getString(R.string.clear_msg_log_confirm),
                     getString(R.string.yes),
-                    getString(R.string.cancel),
-                    DialogInterface.OnClickListener { _, _ ->
-                        try {
-                            PrintWriter(File(this.filesDir, msgLogFileName)).use { out -> out.println("") }
-                            Toast.makeText(applicationContext, getString(R.string.cleared), Toast.LENGTH_SHORT).show()
-                            refreshMsgLog()
-                        } catch (e: Exception) {
-                            Toast.makeText(applicationContext, getString(R.string.clear_failed), Toast.LENGTH_SHORT).show()
-                        }
+                    getString(R.string.cancel)
+                ) { _, _ ->
+                    try {
+                        PrintWriter(
+                            File(
+                                this.filesDir,
+                                msgLogFileName
+                            )
+                        ).use { out -> out.println("") }
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.cleared),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        refreshMsgLog()
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.clear_failed),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                )
+                }
                 return true
             }
             else -> super.onOptionsItemSelected(item)

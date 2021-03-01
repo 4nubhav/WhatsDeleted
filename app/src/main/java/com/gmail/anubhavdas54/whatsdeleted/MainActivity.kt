@@ -16,7 +16,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
 import java.lang.Exception
-import android.content.DialogInterface
 import android.content.res.Configuration
 import android.view.Menu
 import android.view.MenuItem
@@ -29,6 +28,7 @@ private const val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0
 class MainActivity : AppCompatActivity() {
 
     private val msgLogFileName = "msgLog.txt"
+    private val signalMsgLogFileName = "signalMsgLog.txt"
     private val whatsDeleted = File(Environment.getExternalStorageDirectory(),
         "WhatsDeleted${File.separator}WhatsDeleted Images")
 
@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         // Widgets
         val msgLogStatus = findViewById<TextView>(R.id.msg_log_status)
         val imgDirStatus = findViewById<TextView>(R.id.img_dir_status)
-        val viewMsgLogBtn = findViewById<Button>(R.id.view_msg_log_btn)
+        val viewWALogBtn = findViewById<Button>(R.id.view_wa_log_btn)
+        val viewSignalLogBtn = findViewById<Button>(R.id.view_signal_log_btn)
         val imgDirDelBtn = findViewById<Button>(R.id.img_dir_del_btn)
         val medObsSwitch = findViewById<SwitchMaterial>(R.id.med_obs_switch)
         val notificationListenerSwitch = findViewById<SwitchMaterial>(R.id.notification_listener_switch)
@@ -50,13 +51,22 @@ class MainActivity : AppCompatActivity() {
 
         // TextView
         msgLogStatus.text = getString(R.string.msg_log_status_str,
-            if (File(this.filesDir, msgLogFileName).exists()) checkEmoji else crossEmoji)
+            if (File(this.filesDir, msgLogFileName).exists()
+                && File(this.filesDir, signalMsgLogFileName).exists()) checkEmoji else crossEmoji)
         imgDirStatus.text = getString(R.string.img_dir_status_str,
             if (whatsDeleted.exists()) checkEmoji else crossEmoji)
 
         // Button
-        viewMsgLogBtn.setOnClickListener {
+        // DRY
+        viewWALogBtn.setOnClickListener {
             val intent = Intent(this, MsgLogViewerActivity::class.java)
+            intent.putExtra("app", "whatsapp")
+            startActivity(intent)
+        }
+
+        viewSignalLogBtn.setOnClickListener {
+            val intent = Intent(this, MsgLogViewerActivity::class.java)
+            intent.putExtra("app", "signal")
             startActivity(intent)
         }
 
@@ -66,15 +76,18 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.del_backup_img),
                 getString(R.string.del_backup_img_confirm),
                 getString(R.string.yes),
-                getString(R.string.cancel),
-                DialogInterface.OnClickListener { _, _ ->
-                    try {
-                        deleteRecursive(whatsDeleted)
-                    } catch (e: Exception) {
-                        Toast.makeText(applicationContext, getString(R.string.del_failed), Toast.LENGTH_SHORT).show()
-                    }
+                getString(R.string.cancel)
+            ) { _, _ ->
+                try {
+                    deleteRecursive(whatsDeleted)
+                } catch (e: Exception) {
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.del_failed),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            )
+            }
         }
 
         // Notification Channel
@@ -125,9 +138,8 @@ class MainActivity : AppCompatActivity() {
                     "Settings > Apps  & notifications > Special app access > " +
                             "Notification Access > WhatsDeleted > Turn Off",
                     getString(R.string.ok),
-                    null,
-                    DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() }
-                )
+                    null
+                ) { dialog, _ -> dialog.cancel() }
             }
             else {
                 AlertDialogHelper.showDialog(
@@ -136,9 +148,8 @@ class MainActivity : AppCompatActivity() {
                     "Settings > Apps & notifications > Special app access > " +
                             "Notification Access > WhatsDeleted > Allow",
                     getString(R.string.ok),
-                    null,
-                    DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() }
-                )
+                    null
+                ) { dialog, _ -> dialog.cancel() }
             }
         }
     }
@@ -161,6 +172,12 @@ class MainActivity : AppCompatActivity() {
         }
         if (!File(this.filesDir, msgLogFileName).exists()) {
             if (!File(this.filesDir, msgLogFileName).createNewFile())
+                Toast.makeText(applicationContext, getString(R.string.create_msg_log_failed),
+                    Toast.LENGTH_SHORT).show()
+        }
+
+        if (!File(this.filesDir, signalMsgLogFileName).exists()) {
+            if (!File(this.filesDir, signalMsgLogFileName).createNewFile())
                 Toast.makeText(applicationContext, getString(R.string.create_msg_log_failed),
                     Toast.LENGTH_SHORT).show()
         }
@@ -225,9 +242,8 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_toggle_theme -> {
-                val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
-                when (currentNightMode) {
+                when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
                     Configuration.UI_MODE_NIGHT_NO -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     }

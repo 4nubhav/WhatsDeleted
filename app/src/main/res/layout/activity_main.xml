@@ -41,13 +41,20 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/view_msg_log_btn"
+            android:id="@+id/view_wa_log_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:theme="@style/PrimaryButtonTheme"
-            android:text="@string/view" />
+            android:theme="@style/WhatsAppButtonTheme"
+            android:text="WhatsApp" />
 
+        <Button
+            android:id="@+id/view_signal_log_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:theme="@style/SignalButtonTheme"
+            android:text="Signal" />
     </LinearLayout>
 
     <LinearLayout
@@ -87,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:theme="@style/PrimaryButtonTheme"
+            android:theme="@style/WhatsAppButtonTheme"
             android:text="@string/delete" />
 
     </LinearLayout>
