@@ -3,7 +3,7 @@
 
     <!-- Manifest -->
     <string name="whatsapp_notification_listener_service">Lecteur de notifications WhatsApp et Signal</string>
-    <string name="media_observer_service">Service d'oservation des médias</string>
+    <string name="media_observer_service">Service d\'oservation des médias</string>
 
     <!-- activity_main.xml -->
     <string name="view">Vue</string>
@@ -18,7 +18,7 @@
     <string name="clear_msg_log">Effacer le journal des messages</string>
     <string name="clear_msg_log_confirm">Voulez-vous vraiment effacer le journal des messages ?</string>
     <string name="cleared">Effacé</string>
-    <string name="clear_failed">Echec lors de l'éffacement</string>
+    <string name="clear_failed">Echec lors de l\'éffacement</string>
 
     <string name="del_backup_img">Supprimer les images sauvegardées</string>
     <string name="del_backup_img_confirm">Voulez-vous vraiment supprimer les images sauvegardées ?</string>
