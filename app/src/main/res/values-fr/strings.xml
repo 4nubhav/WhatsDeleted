@@ -3,7 +3,7 @@
 
     <!-- Manifest -->
     <string name="whatsapp_notification_listener_service">Lecteur de notifications WhatsApp et Signal</string>
-    <string name="media_observer_service">Service d\'oservation des médias</string>
+    <string name="media_observer_service">Service d\'observation des médias</string>
 
     <!-- activity_main.xml -->
     <string name="view">Vue</string>
