@@ -8,7 +8,7 @@
     <!-- activity_main.xml -->
     <string name="view">Vue</string>
     <string name="delete">Tout supprimer</string>
-    <string name="media_observer">Observation des médias</string>
+    <string name="media_observer">Observateur de médias</string>
     <string name="notification_listener">Lecteur de notificatons</string>
 
     <!-- MainActivity.kt -->
