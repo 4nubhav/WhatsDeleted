@@ -1,22 +1,22 @@
-Messages & media are saved to a backup location so that you can access them even if the sender deletes them.
+Les messages et médias sont enregistrés dans un emplacement de sauvegarde afin que vous puissiez y accéder même si l'expéditeur les supprime.
 
-How it works:
+Comment ça fonctionne :
 
-• Notification Listener logs new messages.
-• Media Observer watches for new images.
+• Le lecteur de notifications journalise les nouveaux messages.
+• L'observateur de médias cherche s'il à de nouvelles images.
 	
-How to use:
+Comment l'utiliser :
 
-• Allow storage access.
-• Allow notification access (tap on the switch next to Notification Listener and follow the instructions).
-• Media Observer is turned on by default.
+• Autorisez l'accès au stockage.
+• Autorisez l'accès aux notifications (activez le commutateur à côté de "Lecteur de notifications" et suivez les instructions).
+• L'observateur de médias est activé par défaut.
 	
-Backup Location:
+Emplacement de sauvegarde :
 
 • Images -> External Storage/WhatsDeleted/WhatsDeleted Images/
 	
-Points to note:
+Points à noter :
 
-• Messages received directly in the chat window (and not in the notifications) won't be saved.
-• Images will be saved to the backup directory only if they were downloaded.
-• Clear the message log & image directory periodically to save storage space.
+• Les messages reçus directement dans la fenêtre de discussion (et non avec une notification) ne seront pas sauvegardés. 
+• Les images seront sauvegardées dans l'emplacement de sauvegarde seulement si elles sont téléchargées.
+• Effacez le journal des messages et les images périodiquement pour sauvegarder de l'espace de stockage.
