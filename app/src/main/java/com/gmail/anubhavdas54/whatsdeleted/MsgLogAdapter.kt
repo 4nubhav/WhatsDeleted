@@ -22,12 +22,15 @@ class MsgLogAdapter(private val msgList: List<String>) : RecyclerView.Adapter<Ms
 
     override fun onBindViewHolder(holder: MsgLogViewHolder, position: Int) {
         val msg = msgList[position]
-        val date = msg.substringBefore('|',"")
-        val username = msg.substringAfter('|',"").substringBefore(':')
-        val data =  msg.substringAfter("|").substringAfter(':')
-        holder.msgTextView.text = data
-        holder.msgDateView.text =date
-        holder.msgUsernameView.text=username
+        //this will ignore already added "checking for new messages"
+        if(Utilities.notCheckingMsg(msg) || Utilities.notCountMsg(msg)) {
+            val date = msg.substringBefore('|', "")
+            val username = msg.substringAfter('|', "").substringBefore(':')
+            val data = msg.substringAfter("|").substringAfter(':')
+            holder.msgTextView.text = data
+            holder.msgDateView.text = date
+            holder.msgUsernameView.text = username
+        }
     }
 
     override fun getItemCount(): Int = msgList.size
