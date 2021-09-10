@@ -31,7 +31,7 @@
     <string name="create_msg_log_failed">Echec de la création du fichier du journal des messages</string>
 
     <string name="create_backup_dir">Création du répertoire de sauvegarde</string>
-    <string name="allow_storage_permission_msg">Les messages et les médias ne peuvent pas être enregistrés sans accès au stockage. Redémarrez l'application et autorisez la permission.</string>
+    <string name="allow_storage_permission_msg">Les messages et les médias ne peuvent pas être enregistrés sans accès au stockage. Redémarrez l\'application et autorisez la permission.</string>
 
     <string name="ok">OK</string>
     <string name="yes">Oui</string>
