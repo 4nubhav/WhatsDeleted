@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">WhatsDeleted</string>
+
+    <!-- Manifest -->
+    <string name="whatsapp_notification_listener_service">Pendengar Pemberitahuan WhatsApp</string>
+    <string name="media_observer_service">Layanan Pengamat Media</string>
+
+    <!-- activity_main.xml -->
+    <string name="view">Melihat</string>
+    <string name="delete">Hapus Semua</string>
+    <string name="media_observer">Pengamat Media</string>
+    <string name="notification_listener">Pendengar Pemberitahuan</string>
+
+    <!-- MainActivity.kt -->
+    <string name="msg_log_status_str">Log pesan: %1$s</string>
+    <string name="img_dir_status_str">Direktori gambar: %1$s</string>
+
+    <string name="clear_msg_log">Hapus Log Pesan</string>
+    <string name="clear_msg_log_confirm">Apakah Anda yakin ingin menghapus log pesan?</string>
+    <string name="cleared">Dihapus</string>
+    <string name="clear_failed">Gagal menghapus</string>
+
+    <string name="del_backup_img">Hapus Gambar Cadangan</string>
+    <string name="del_backup_img_confirm">Apakah Anda yakin ingin menghapus semua gambar cadangan?</string>
+    <string name="del_failed">Gagal menghapus</string>
+
+    <string name="started">Dimulai</string>
+    <string name="stopped">Berhenti</string>
+
+    <string name="create_backup_dir_failed">Gagal membuat direktori cadangan</string>
+    <string name="create_msg_log_failed">Gagal membuat file log pesan</string>
+
+    <string name="create_backup_dir">Membuat direktori cadangan</string>
+    <string name="allow_storage_permission_msg">Pesan dan media tidak dapat disimpan tanpa izin penyimpanan. Mulai ulang aplikasi dan izinkan.</string>
+
+    <string name="ok">Ok</string>
+    <string name="yes">Ya</string>
+    <string name="cancel">Batal</string>
+
+    <string name="unable_to_delete">Tidak dapat menghapus: %1$s</string>
+
+    <!-- menu_msg_log_viewer.xml -->
+    <string name="action_refresh">Segarkan</string>
+    <string name="action_clear">Bersihkan</string>
+</resources>
