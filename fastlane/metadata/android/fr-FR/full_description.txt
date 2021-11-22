@@ -1,0 +1,22 @@
+Les messages et médias sont enregistrés dans un emplacement de sauvegarde afin que vous puissiez y accéder même si l'expéditeur les supprime.
+
+Comment ça fonctionne :
+
+• Le lecteur de notifications journalise les nouveaux messages.
+• L'observateur de médias cherche s'il à de nouvelles images.
+	
+Comment l'utiliser :
+
+• Autorisez l'accès au stockage.
+• Autorisez l'accès aux notifications (activez le commutateur à côté de "Lecteur de notifications" et suivez les instructions).
+• L'observateur de médias est activé par défaut.
+	
+Emplacement de sauvegarde :
+
+• Images -> External Storage/WhatsDeleted/WhatsDeleted Images/
+	
+Points à noter :
+
+• Les messages reçus directement dans la fenêtre de discussion (et non avec une notification) ne seront pas sauvegardés. 
+• Les images seront sauvegardées dans l'emplacement de sauvegarde seulement si elles sont téléchargées.
+• Effacez le journal des messages et les images périodiquement pour sauvegarder de l'espace de stockage.
